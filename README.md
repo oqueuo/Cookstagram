@@ -17,6 +17,7 @@ Generate a Django secret key and place in line 23 of 'Cookstagram/backend/appmai
 Create the database by navigating to 'Cookstagram/backend/' and running the following two commands:
 
 > python manage.py makemigrations
+
 > python manage.py migrate
 
 
