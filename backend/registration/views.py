@@ -13,7 +13,7 @@ from knox.models import AuthToken
 from .serializers import RegisterSerializer, LoginSerializer
 from userprofile.serializers import UserSerializer
 
-# Create your views here.
+
 class RegisterDetail(generics.GenericAPIView):
     serializer_class = RegisterSerializer
 
@@ -37,13 +37,3 @@ class LoginDetail(generics.GenericAPIView):
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]
         })
-
-# def register(response):
-#     if response.method == "POST":
-#         form = UserCreationForm(response.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('login')
-#     else:
-#         form = UserCreationForm()
-#     return render(response, 'registration/register.html', {'form':form})

@@ -22,12 +22,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 app_name = 'userprofile'
 
 urlpatterns = [
-    # path('', RedirectView.as_view(url='profile')),
-    # path('profile/', views.view_profile, name='view_profile'),
-    # path('profile/<int:pk>/', views.view_profile, name='view_profile_with_pk'),
-    # url(r'^profile/connect/(?P<operation>.+)/(?P<pk>\d+)/$', views.change_friends, name='change_friends'),
-
-    # API URLs
     path('profile/<int:pk>/', views.OtherUserDetail.as_view()), #includes favorites, and friends' recipes for the feed
     path('profile/<int:pk>/favorites/', views.UserFavoriteList.as_view()),
     path('profile/<int:pk>/friends/', views. UserFriendsList.as_view()),

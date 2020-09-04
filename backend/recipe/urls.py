@@ -21,9 +21,6 @@ from . import views
 app_name = 'recipe'
 
 urlpatterns = [
-    # path('recipe/new/', views.recipe_new, name='recipe_new'),
-    # path('recipe/<int:pk>/remove/', views.recipe_remove, name='recipe_remove'),
-    # path('recipe/<int:pk>/edit/', views.recipe_edit, name='recipe_edit'),
     path('', views.RecipeList.as_view()),
     path('<int:pk>/', views.RecipeDetail.as_view())
 ]

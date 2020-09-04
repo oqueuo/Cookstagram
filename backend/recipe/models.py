@@ -9,7 +9,6 @@ def upload_path(instance, filename):
     return '/'.join(['pictures', str(instance.title), filename])
 
 class Recipe(models.Model):
-    # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     author = models.ForeignKey(User, related_name="recipes",  on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=200)
     cooktime = models.TextField()

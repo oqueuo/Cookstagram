@@ -19,9 +19,6 @@ from userprofile.views import UserDetail
 from .views import RegisterDetail, LoginDetail
 
 urlpatterns = [
-    # path('accounts/login/', views_stock.LoginView.as_view(), name='login'),
-    # path('accounts/logout/', views_stock.LogoutView.as_view(next_page='/'), name='logout'),
-    # path('accounts/register/', views.register, name='register')
     path('', include('knox.urls')),
     path('user', UserDetail.as_view()),
     path('register', RegisterDetail.as_view()),

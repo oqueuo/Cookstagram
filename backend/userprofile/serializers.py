@@ -27,9 +27,8 @@ class UserSerializer(serializers.ModelSerializer):
             ]
 
     def get_friends(self, obj):
-        # return dj_serializers.serialize('json', views.user_friends(obj))
         try:
-            friend = Friend.objects.get(current_user=obj) # logged-in user object
+            friend = Friend.objects.get(current_user=obj)
             friends = friend.users.all()
         except:
             friends = None

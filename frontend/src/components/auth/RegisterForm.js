@@ -29,7 +29,7 @@ class RegisterForm extends Component {
     }
     return (
       <div id="registerform" className='ui container'>
-        <div className='ui segment'>
+        <div className='ui segment' style={{backgroundColor: '#ded8fe'}}>
           <form
             onSubmit={this.props.handleSubmit(this.onSubmit)}
             className='ui form'
