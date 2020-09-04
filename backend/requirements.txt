@@ -1,0 +1,7 @@
+Django~=2.2.4
+django-registration
+Pillow
+django-crispy-forms
+djangorestframework
+django-cors-headers
+django-rest-knox

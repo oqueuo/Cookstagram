@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Global */
+.hidden {
+  display: none !important;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  /* font-family: 'Times New Roman', Times, serif; */
+}
+
+body {
+  background-color: rgb(253, 244, 222);
+}
+
+/******** LOGINFORM ********/
+#loginform {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 80%;
+}
+#registerform {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 80%;
+}
+
+
+/******** HEADER ********/
+header {
+  grid-area: header;
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+    header h1 {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      font-size: 32px;
+      color: #FFCBB1;
+      user-select: none;
+    }
+    header h1 a {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 32px;
+      color: #FFCBB1;
+      user-select: none;
+    }
+    header h1 a:hover {
+      text-decoration: none;
+      color: #FFCBB1;
+    }
+    header p {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      color: #ffd4be;
+      font-weight: bold;
+      user-select: none;
+    }
+    #profile_btn {
+      position: absolute;
+      right: 0px;
+      top: 10px;
+      font-size: 31px;
+      color: #6A6876;
+    }
+    #profile_btn:hover {
+      cursor: pointer;
+    }
+    #feed_btn {
+      position: absolute;
+      right: 40px;
+      top: 10px;
+      font-size: 30px;
+      color: #6A6876;
+    }
+    #feed_btn:hover {
+      cursor: pointer;
+    }
+    #explore_btn {
+      position: absolute;
+      right: 78px;
+      top: 10px;
+      font-size: 31px;
+      color: #6A6876;
+    }
+    #explore_btn:hover {
+      cursor: pointer;
+    }
+    #logout_btn {
+      font-size: 17px;
+      color: rgb(189, 185, 207);
+      position: absolute;
+      left: 190px;
+      top: 13px;
+    }
+    #logout_btn:hover {
+      cursor: pointer;
+    }
+
+/******** RECIPE CARDS ********/
+.recipecard {
+  box-sizing: border-box;
+  width: 33.3333%;
+
+  padding-right: 1%;
+  padding-bottom: 1%;
+  position: relative;
+}
+    .recipecard-content {
+      position: relative;
+      display: grid;
+      grid-template-areas: 
+        "title"
+        "author"
+        "cooktime";
+      grid-template-rows: 85% 5% 10%;
+      height: 25.75vw;
+      color: rgb(253, 244, 222);
+      background-color: #6A6876;
+      border: 1px #6A6876 solid;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+    .recipecard:nth-child(3n) {
+      padding-right: 0;
+    }
+        .recipe-title-container {
+          grid-area: title;
+          position: relative;
+          overflow: hidden;
+        }
+            .recipe-title {
+              position: relative;
+              width: 100%;
+              height: 100%;
+            }
+                .recipe-title h1 {
+                  position: absolute;
+                  bottom: 0;
+                  margin: 0;
+                  font-size: 30px;
+                  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+                  padding-left: 10px;
+                  text-decoration: none;
+                  color: rgb(253, 244, 222);
+                }
+            .favorite_btn {
+              cursor: pointer;
+              position: absolute;
+              font-size: 20px;
+              top: 7px;
+              right: 7px;
+              z-index: 100;
+              text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+            }
+            .edit_btn {
+              position: absolute;
+              font-size: 22px;
+              top: 10px;
+              right: 7px;
+              color: rgb(253, 244, 222);
+              text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+            }
+            .delete_btn {
+              position: absolute;
+              font-size: 22px;
+              top: 40px;
+              right: 12.5px;
+              color: rgb(253, 244, 222);
+              text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+            }
+        .recipe-cooktime {
+          margin: 0;
+          grid-area: cooktime;
+          text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+          padding-left: 10px;
+          color: rgb(253, 244, 222);
+          font-size: 20px;
+          height: 100%;
+          padding-top: 5px;
+        }
+        .recipe-author {
+          margin: 0;
+          grid-area: author;
+          text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+          padding-left: 10px;
+          font-size: 15px;
+        }
+/******** FEED PAGE GRID ********/
+#grid-container-FEED {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas:
+  "header"
+  "feedHeader"
+  "feed";
+  grid-template-rows: 60px 90px calc(100vh - 110px);
+}
+    #feed-title-container {
+      grid-area: feedHeader;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      color: #6A6876;
+      padding-top: 20px;
+    }
+    #recipecard-container-FEED {
+      grid-area: feed;
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      align-content: flex-start;
+    }
+        
+
+/* ******* PROFILE PAGE GRID ******* */
+#grid-container-PROFILE {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas:
+  "header"
+  "profile"
+  "posts";
+  grid-template-rows: 60px 150px calc(100vh - 210px);
+}
+    #profile {
+      grid-area: profile;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+      /* border: 2px black solid; */
+    }
+        #username-container {
+          display: inline-grid;
+          grid-template-areas: 
+          "username blank friendstatus";
+          grid-template-columns: auto 20px auto;
+          position: relative;
+        }
+            #profile h1 {
+              grid-area: username;
+              font-size: 32px;
+              margin: 0;
+              padding: 0;
+              color: #6A6876;
+            }
+
+            #blank {
+              grid-area: blank;
+            }
+
+            #friend_btn {
+              grid-area: friendstatus;
+              font-size: 25px;
+              margin: 0;
+              padding: 0;
+              position: absolute;
+              bottom: 9px;
+              color: #FFB4A0;
+              cursor: pointer;
+            }
+        #count-container {
+          display: inline-grid;
+          grid-template-areas: 
+          "ccount blank-count fcount add";
+          grid-template-columns: auto 15px auto;
+        }
+            #created-container {
+              cursor: pointer;
+            }
+            #created-label {
+              grid-area: clabel;
+              margin: 0;
+              font-size: 13px;
+            }
+            #created-count {
+              grid-area: ccount;
+              margin: 0;
+              font-size: 12px;
+              text-align: center;
+            }
+
+            #blank-count {
+              grid-area: blank-count;
+            }
+
+            #saved-container {
+              cursor: pointer;
+            }
+            #saved-label {
+              grid-area: flabel;
+              margin: 0;
+              font-size: 13px;
+            }
+            #saved-count {
+              grid-area: fcount;
+              margin: 0;
+              font-size: 12px;
+              text-align: center;
+            }
+
+            #add-btn-container {
+              grid-area: add;
+              margin: 0;
+              padding-left: 10px;
+              cursor: pointer;
+              position: relative;
+              padding-top: 2px;
+              padding-left: 15px;
+            }
+            #add-btn {
+              font-size: 35px;
+              position: absolute;
+              color: #ffb997;
+            }
+            .label-highlighted {
+              font-weight: bold;
+            }
+            .count-highlighted {
+              border-bottom: #9a99a0 3px solid;
+            }
+
+    #recipecard-container-PROFILE {
+      grid-area: posts;
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      align-content: flex-start;
+    }
+
+
+
+
+/******** EXPLORE PAGE GRID ********/
+#grid-container-EXPLORE {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas:
+  "header"
+  "search"
+  "results";
+  grid-template-rows: 60px 60px calc(100vh - 120px);
+  position: relative;
+}
+    #search-container {
+      grid-area: search;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      /* background: red; */
+      position: relative;
+    }
+    #explore-search-bar {
+      width: 100%;
+      height: 30px;
+      border: 1.5px rgb(209, 209, 209) solid;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+      padding-left: 10px;
+      font-size: 18px;
+      color: #9a99a0;
+    }
+    input:focus {
+      outline: none;
+    }
+    #results-container {
+      grid-area: results;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      /* background: orange; */
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+        .results-card-container {
+          box-sizing: border-box;
+          width: 20%;
+
+          padding-right: 1%;
+          padding-bottom: 1%;
+        }
+        .results-card-container:nth-child(5n) {
+          padding-right: 0;
+        }
+            .results-card-username-container {
+              background-color: #FFB4A0;
+              color: #ffd4be;
+              height: 60px;
+              text-align: center;
+              position: relative;
+              padding-top: 19px;
+              overflow: hidden;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+              border-radius: 10px;
+            }
+                .results-card-username-container  {
+                  font-size: 30px;
+                  font-weight: bold;
+                  color: rgb(253, 244, 222);
+                }
+/******** RecipeDetail Grid ********/
+/* #grid-container-EXPLORE {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas:
+  "header"
+  "search"
+  "results";
+  grid-template-rows: 60px 60px calc(100vh - 120px);
+  position: relative;
+} */
+    #recipe-detail-title {
+      grid-area: search;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+      /* background: red; */
+      color: #6A6876;
+    }
+    #recipe-detail-pic-info {
+      grid-area: results;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+
+      display: grid;
+      grid-template-areas: 
+      "pic info";
+      grid-template-columns: 40% 60%;
+    }
+        #recipe-detail-pic {
+          grid-area: pic;
+          height: 30vw;
+          width: calc(100% - 10px);
+          border-radius: 10px;
+          margin-top: 1px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+          margin-right: 10px;
+        }
+        #recipe-detail-info {
+          grid-area: info;
+        }
+            #recipe-detail-ingredients {
+              background-color: #ffad97;
+              padding: 10px;
+              border-radius: 10px;
+              color: rgb(253, 244, 222);
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+            }
+                #recipe-detail-ingredients h2 {
+                  font-size: 32px;
+                }
+                #recipe-detail-ingredients p {
+                  font-size: 20px;
+                }
+            #recipe-detail-directions {
+              background-color: #ffa184;
+              margin-top: 10px;
+              padding: 15px;
+              border-radius: 10px; 
+              color: rgb(253, 244, 222);  
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);          
+            }
+                #recipe-detail-directions h2 {
+                  font-size: 32px;
+                }
+                #recipe-detail-directions p {
+                  font-size: 20px;
+                }
+/***** RecipeForm Box *****/
+#recipeform-container {
+  grid-area: posts;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+  .recipecard-content {
+    grid-template-rows: 70% 15% 10%;
+  }
+  .results-card-container {
+    width: 25%;
+  }
+  .results-card-container:nth-child(4n) {
+    padding-right: 0;
+  }
+  .results-card-container:nth-child(5n) {
+    padding-right: 1%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .recipecard-content {
+    grid-template-rows: 70% 15% 10%;
+  }
+}
+
+@media (max-width: 800px) {
+  .recipecard-content {
+    grid-template-rows: 70% 15% 10%;
+  }
+  .recipe-title h1 {
+    font-size: 24px;
+  }
+  .recipe-cooktime {
+    font-size: 18px;
+  }
+  .results-card-container {
+    width: 33.33333%;
+  }
+  .results-card-container:nth-child(3n) {
+    padding-right: 0;
+  }
+  .results-card-container:nth-child(4n) {
+    padding-right: 1%;
+  }
+}
+
+@media (max-width: 750px) {
+  #recipecard-container-PROFILE {
+    width: 95%;
+  }
+  #recipecard-container-FEED {
+    width: 95%;
+  }
+  #recipeform-container {
+    width: 95%;
+  }
+  #profile {
+    width: 95%;
+  }
+  #header {
+    width: 95%;
+  }
+  #feed-title-container {
+    width: 95%;
+  }
+  .recipe-title h1 {
+    font-size: 24px;
+  }
+  .recipecard-content {
+    height: 31vw;
+    grid-template-rows: 70% 10% 20%;
+  }
+  .recipe-cooktime {
+    font-size: 18px;
+  }
+  #search-container {
+    width: 95%;
+  }
+  #results-container {
+    width: 95%;
+  }
+  #loginform {
+    width: 95%;
+  }
+  #registerform {
+    width: 95%;
+  }
+
+
+
+  #recipe-detail-title {
+    width: 95%;
+  }
+  #recipe-detail-pic-info {
+    width: 95%;
+  }
+  #recipe-detail-pic-info {
+    grid-template-areas:
+    "pic"
+    "info" ;
+    grid-template-columns: 100%;
+    grid-template-rows: 88vw auto;
+  }
+  #recipe-detail-pic {
+    height: 83vw;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .results-card-container {
+    width: 50%;
+  }
+  .results-card-container:nth-child(2n) {
+    padding-right: 0;
+  }
+  .results-card-container:nth-child(3n) {
+    padding-right: 1%;
+  }
+}

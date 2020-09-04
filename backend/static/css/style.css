@@ -1,0 +1,340 @@
+/* Global */
+.hidden {
+    display: none;
+}
+
+body {
+    background-color: rgb(253, 244, 222);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Layout (CSS Grid) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 20vw 30vw 50vw;
+    grid-template-rows: 50px ;
+    grid-template-areas: 
+        "topbar    topbar      topbar"
+        "title     ingredients directions";
+}
+
+header {
+    grid-area: topbar;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+header h1 {
+    margin: 0;
+    margin-left: 25px;
+    text-decoration: none;
+}
+.add_btn {
+    position: absolute;
+    top: 3px;
+    right: 30px;
+}
+.add_btn:hover {
+    opacity: 0.75;
+}
+.add_btn:active {
+    opacity: 0.6;
+}
+.add_btn>span {
+    font-size: 30px;
+    color: #6A6876;
+}
+.logout_btn {
+    position: absolute;
+    top: 13.5px;
+    left: 215px;
+}
+.logout_btn:hover {
+    opacity: 0.75;
+}
+.logout_btn:active {
+    opacity: 0.6;
+}
+.logout_btn>span {
+    font-size: 15px;
+    color: rgb(189, 185, 207);
+}
+
+aside {
+    grid-area: title;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+.title-item {
+    position: relative;
+    height: 100px;
+    color: rgb(253, 244, 222);
+    border: 1px #6A6876 solid;
+    background-color: #6A6876;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+}
+.recipe-title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 40px;
+}
+.recipe-cooktime {
+    margin-top: 7px;
+    font-size: 17px;
+}
+.title-item:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+.title-item:active {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+#recipe-ingredients {
+    grid-area: ingredients;
+    background-color: rgb(233, 148, 125);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 50px;
+    color: rgb(253, 244, 222);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 80vh;
+    overflow: hidden;
+}
+#recipe-ingredients h1 {
+    margin: 0;
+}
+#recipe-ingredients-text {
+    font-size: 30px;
+}
+
+#recipe-directions {
+    grid-area: directions;
+    background: #FFB4A0;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-left: 15px;
+    margin-right: 40px;
+    font-size: 50px;
+    color: rgb(253, 244, 222);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 80vh;
+    overflow: hidden;
+}
+#recipe-directions h1 {
+    margin: 0;
+}
+#recipe-directions-text {
+    font-size: 30px;
+}
+#recipe-ingredients, #recipe-directions, aside {
+    margin-top: 30px;
+}
+
+/* Selected */
+.topheader {
+    color: #FFCBB1;
+}
+.search-bar {
+    margin-left: 22px;  
+    margin-top: 15px;
+}
+.search-bar input {
+    width: calc(20vw - 35px);
+    font-size: 1em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #525865;
+    border-radius: 10px;
+    border: 1px solid rgb(214, 214, 214);
+    padding-left: 7px;
+    background: #fff;
+    box-shadow: inset 1px 10px 15px rgba(0, 0, 0, 0.07);
+    font-weight: bold;
+}
+.search-bar input:hover {
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.02);
+}
+.search-bar input:focus {
+    outline: none;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Recipe pulldown */
+article ul {
+    list-style: none;
+    z-index: 5;
+}
+span.three-vertical-dots {
+    /* Put the three dots on top right corner of recipe card */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.three-vertical-dots:hover {
+    cursor: pointer;
+    font-size: 20px;
+}   
+.three-vertical-dots li:active {
+    color: rgb(255, 239, 218);
+}
+ul .recipe-pulldown {
+    display: none;
+    background-color: rgb(253, 244, 222);
+    border: 1px solid #333;
+    border-radius: 4px;
+    width: 90px;
+    padding: 5px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    text-align: end;
+}
+ul .recipe-pulldown li {
+    color: #333;
+    display: block;
+    block-size: auto;
+}
+article>ul>li:hover .recipe-pulldown {
+    display: block;
+}
+ul .recipe-pulldown a {
+    color: rgb(76, 74, 83);
+    font-size: 15px;
+}
+ul .recipe-pulldown a:hover {
+    font-size: 16px;
+}
+
+
+/* Media Queries */
+@media (max-width: 1700px) {
+    .recipe-title {
+        font-size: 20px;
+    }
+    .recipe-cooktime {
+        font-size: 15px;
+    }
+
+    #recipe-ingredients {
+        font-size: 40px;
+    }
+    #recipe-ingredients-text {
+        font-size: 25px;
+    }
+    
+    #recipe-directions {
+        font-size: 40px;
+    }
+    #recipe-ingredients-text {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .recipe-title {
+        font-size: 20px;
+    }
+    .recipe-cooktime {
+        font-size: 15px;
+    }
+
+    #recipe-ingredients {
+        font-size: 25px;
+        padding-left: 10px;
+    }
+    #recipe-ingredients-text {
+        font-size: 17px;
+    }
+    
+    #recipe-directions {
+        font-size: 25px;
+        padding-left: 10px;
+    }
+    #recipe-directions-text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 600px) {
+    * {
+        margin:0 !important;
+        padding: 0 ;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 50px;
+        grid-template-areas: 
+            "topbar"
+            "title"
+            "ingredients"
+            "directions";
+    }
+    header h1 {
+        margin-top: 5px !important;
+        margin-left: 10px !important;
+    }
+    .search-bar {
+        margin-left: 10px !important;
+        margin-top: 15px !important;
+        min-width: 20vw;
+    }
+    .search-bar input {
+        width: 170px;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    aside {
+        width: 100vw;
+        height: 130px;
+        grid-area: title;
+        overflow-x: scroll;
+        display: inline-flex;
+        margin-right: 20px !important;
+        /* height: 90px; 40px - more place for scrollbar, is hidden under parent box */
+        /* white-space: nowrap; */
+        margin-top: 35px !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    ::-webkit-scrollbar {display:none;}
+
+    .title-item {
+        /* min-width: 200px; */
+        min-width: 170px;
+        max-width: 300px;
+        margin-right: 15px !important;
+    }
+    #recipe-ingredients, #recipe-directions {
+        width: 93vw;
+        margin-top: 15px !important;
+
+        min-height: 400px;
+
+        margin-left: 7px !important;
+        margin-right: 10px !important;
+    }
+    .add_btn {
+        top: 6px;
+        right: 5px;
+    }
+    .logout_btn {
+        position: absolute;
+        top: 18.5px;
+        left: 200px;
+    }
+}

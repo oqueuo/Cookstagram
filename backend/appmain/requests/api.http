@@ -1,0 +1,86 @@
+# requests/api.http
+
+# Send Request
+GET http://127.0.0.1:8000/api/recipe/
+Content-Type: application/json
+###
+
+# Send Request
+POST http://127.0.0.1:8000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "aaa",
+    "password": "a"
+}
+
+###
+
+POST http://127.0.0.1:8000/api/user/profile/6/friends/
+Authorization: Token 8894ebaf33a6a8f90e632f7563b4570678d0ea5f97c481b46befb0cfd6269301
+Content-Type: application/json
+
+{
+"headers": {"Content-Type": "application/json","Authorization": "8894ebaf33a6a8f90e632f7563b4570678d0ea5f97c481b46befb0cfd6269301"},
+"other_user_id": "3"
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/user/profile/6/friends/
+Authorization: Token 8894ebaf33a6a8f90e632f7563b4570678d0ea5f97c481b46befb0cfd6269301
+Content-Type: application/json
+
+{
+"headers": {"Content-Type": "application/json","Authorization": "8894ebaf33a6a8f90e632f7563b4570678d0ea5f97c481b46befb0cfd6269301"},
+"other_user_id": "3"
+}
+
+###
+
+POST http://127.0.0.1:8000/api/user/profile/6/favorites/
+Authorization: Token 287f07869fcc4b789fbb278d4ee518b10b8525025f12c149c0a1493a0fa858b0
+Content-Type: application/json
+
+{
+"headers": {"Content-Type": "application/json","Authorization": "c14cb1c524481a5d8ed1b903e32035274f6be48ed2e6b88fe915cfecd45ea27e"},
+"recipe_id": "31"
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/user/profile/6/favorites/
+Authorization: Token 287f07869fcc4b789fbb278d4ee518b10b8525025f12c149c0a1493a0fa858b0
+Content-Type: application/json
+
+{
+"headers": {"Content-Type": "application/json","Authorization": "c14cb1c524481a5d8ed1b903e32035274f6be48ed2e6b88fe915cfecd45ea27e"},
+"recipe_id": "31"
+}
+
+###
+GET http://127.0.0.1:8000/api/user/profile/3/
+Content-Type: application/json
+
+###
+
+# Send Request
+POST http://127.0.0.1:8000/api/auth/logout
+Authorization: Token 4871ab1029f5f6addf0aecf67235569e178089d3451926c58bddf83b270c6fcb
+
+###
+
+# Send Request
+GET http://127.0.0.1:8000/api/auth/user
+Authorization: Token e5cbf53217a4dc7bf016dae5cf149364c131cd8ead8f738e379cead2d6a45b5e
+
+###
+
+# Send Request
+POST http://127.0.0.1:8000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "dammbi",
+    "password": "12345"
+}

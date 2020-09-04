@@ -1,0 +1,4 @@
+- Makes user profiles
+    - Shows created recipes, saved recipes, followers/following.
+- Follow a friend.
+- Save any recipes from the feed or others' profiles to your own profile.
