@@ -13,9 +13,13 @@ Profile |  Feed
 
 <h2>Features</h2>
 - Register an account or click "Try it out!" to use the app.
+
 - Create, edit, delete your own recipes.
+
 - Go to the explore page to search other users' profiles. Add users whose recipes you like to your friends list.
+
 - Check your feed to keep up with all the recipes your friends have added.
+
 - See a recipe you like? Favorite it by clicking the heart, and quickly access it from your own profile.
 
 <h2>Installation</h2>
