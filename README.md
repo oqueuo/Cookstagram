@@ -1,6 +1,7 @@
+Hosted at https://cookstagram.recipes
 <h1>Cookstagram</h1>
 
-A recipe-sharing social network application where users can create their own recipes or explore others’ recipes to save to their collection
+A recipe-sharing social network application where users can create their own recipes or explore others’ recipes to save to their collection.
 
 Profile |  Feed
 :-------------------------:|:-------------------------:
@@ -9,6 +10,13 @@ Profile |  Feed
 Profile |  Feed
 :-------------------------:|:-------------------------:
 <img src="explore.png" width="500">  |  <img src="otherprofile.png" width="500">
+
+<h2>Features</h2>
+- Register an account or click "Try it out!" to use the app.
+- Create, edit, delete your own recipes.
+- Go to the explore page to search other users' profiles. Add users whose recipes you like to your friends list.
+- Check your feed to keep up with all the recipes your friends have added.
+- See a recipe you like? Favorite it by clicking the heart, and quickly access it from your own profile.
 
 <h2>Installation</h2>
 
