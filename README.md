@@ -4,7 +4,7 @@ A recipe-sharing social network application where users can create their own rec
 
 Profile |  Feed  |   Searching Other Users
 :-------------------------:|:-------------------------:|:-------------------------:
-<img src="profile.png" width="250">  |  <img src="feed.png" width="600">  |  <img src="explore.png" width="250">
+<img src="profile.png" width="500">  |  <img src="feed.png" width="500">  |  <img src="explore.png" width="500">
 
 <h2>Installation</h2>
 
