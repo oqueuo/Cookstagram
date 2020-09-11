@@ -2,6 +2,10 @@
 
 A recipe-sharing social network application where users can create their own recipes or explore others’ recipes to save to their collection
 
+Profile |  Feed  |   Searching Other Users
+:-------------------------:|:-------------------------:
+<img src="profile.png" width="250">  |  <img src="feed.png" width="600">  |  <img src="explore.png" width="250">
+
 <h2>Installation</h2>
 
 Install dependencies:
