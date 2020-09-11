@@ -12,6 +12,7 @@ Profile |  Feed
 <img src="explore.png" width="500">  |  <img src="otherprofile.png" width="500">
 
 <h2>Features</h2>
+
 - Register an account or click "Try it out!" to use the app.
 
 - Create, edit, delete your own recipes.
