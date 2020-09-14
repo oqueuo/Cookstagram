@@ -5,11 +5,11 @@ A recipe-sharing social network application where users can create their own rec
 
 Profile |  Feed
 :-------------------------:|:-------------------------:
-<img src="profile.png" width="500">  |  <img src="feed.png" width="500"> 
+<img src="images/profile.png" width="500">  |  <img src="images/feed.png" width="500"> 
 
 Profile |  Feed
 :-------------------------:|:-------------------------:
-<img src="explore.png" width="500">  |  <img src="otherprofile.png" width="500">
+<img src="images/explore.png" width="500">  |  <img src="images/otherprofile.png" width="500">
 
 <h2>Features</h2>
 
