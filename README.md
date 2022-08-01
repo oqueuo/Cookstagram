@@ -1,4 +1,3 @@
-Hosted at https://cookstagram.recipes
 <h1>Cookstagram</h1>
 
 A recipe-sharing social network application where users can create their own recipes or explore others’ recipes to save to their collection.
